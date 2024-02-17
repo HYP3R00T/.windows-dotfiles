@@ -1,16 +1,16 @@
 # ===== WINFETCH CONFIGURATION =====
 
 # $image = "~/winfetch.png"
-# $noimage = $true
+$noimage = $true
 
 # Display image using ASCII characters
 # $ascii = $true
 
 # Set the version of Windows to derive the logo from.
-# $logo = "Windows 10"
+# $logo = "Microsoft"
 
 # Specify width for image/logo
-# $imgwidth = 24
+# $imgwidth = 10
 
 # Specify minimum alpha value for image pixels to be visible
 # $alphathreshold = 50
@@ -19,17 +19,15 @@
 # This should be an array of strings, with positive
 # height and width equal to $imgwidth defined above.
 # $CustomAscii = @(
-#     "⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣦⠀ ⠀"
-#     "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣶⣶⣾⣷⣶⣆⠸⣿⣿⡟⠀ ⠀"
-#     "⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣷⡈⠻⠿⠟⠻⠿⢿⣷⣤⣤⣄⠀⠀ ⠀"
-#     "⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣦⠀ ⠀"
-#     "⠀⠀⠀⢀⣤⣤⡘⢿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⡇ ⠀"
-#     "⠀⠀⠀⣿⣿⣿⡇⢸⣿⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣉⣉⡁ ⠀"
-#     "⠀⠀⠀⠈⠛⠛⢡⣾⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⡇ ⠀"
-#     "⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⠟⠀ ⠀"
-#     "⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⡿⢁⣴⣶⣦⣴⣶⣾⡿⠛⠛⠋⠀⠀ ⠀"
-#     "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠿⢿⡿⠿⠏⢰⣿⣿⣧⠀⠀ ⠀"
-#     "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⠟⠀⠀ ⠀"
+# "${e}[${t};34mlllllllll lllllllll"
+# "${e}[${t};34mlllllllll lllllllll"
+# "${e}[${t};34mlllllllll lllllllll"
+# "${e}[${t};34mlllllllll lllllllll"
+# "${e}[${t};34m                   "
+# "${e}[${t};34mlllllllll lllllllll"
+# "${e}[${t};34mlllllllll lllllllll"
+# "${e}[${t};34mlllllllll lllllllll"
+# "${e}[${t};34mlllllllll lllllllll"
 # )
 
 # Make the logo blink
@@ -71,36 +69,36 @@
 # 'bar' is for bar only.
 # 'textbar' is for text + bar.
 # 'bartext' is for bar + text.
-# $cpustyle = 'bar'
-# $memorystyle = 'textbar'
-# $diskstyle = 'bartext'
-# $batterystyle = 'bartext'
+$cpustyle = 'bartext'
+$memorystyle = 'bartext'
+$diskstyle = 'bartext'
+$batterystyle = 'bartext'
 
 
 # Remove the '#' from any of the lines in
 # the following to **enable** their output.
 
 @(
-    "title"
-    "dashes"
+    # "title"
+    # "dashes"
     "os"
-    "computer"
+    # "computer"
     "kernel"
-    "motherboard"
+    # "motherboard"
     # "custom_time"  # use custom info line
     "uptime"
     # "ps_pkgs"  # takes some time
-    "pkgs"
+    # "pkgs"
     "pwsh"
-    "resolution"
+    # "resolution"
     "terminal"
     # "theme"
     "cpu"
     "gpu"
-    # "cpu_usage"
+    "cpu_usage"
     "memory"
     "disk"
-    # "battery"
+    "battery"
     # "locale"
     # "weather"
     # "local_ip"
