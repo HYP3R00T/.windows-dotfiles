@@ -1,3 +1,9 @@
+Import-Module PSReadLine
+
+# History navigation 
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
 Invoke-Expression (&starship init powershell)
 
 # Remove blue bg with white fonts for directories (list styles -> $PSStyle)
