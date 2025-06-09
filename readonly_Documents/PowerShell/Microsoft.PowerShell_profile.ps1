@@ -41,5 +41,5 @@ if (Get-Command kubectl -ErrorAction SilentlyContinue) {
 # Add alias
 Set-Alias -Name k -Value kubectl
 
-# Echo a message to indicate the profile has been loaded
-Write-Host "PowerShell profile loaded successfully." -ForegroundColor Green
+# Set environment variables
+$env:K9S_CONFIG_DIR = "$HOME\.config\k9s"
