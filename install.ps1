@@ -6,7 +6,7 @@ Write-Host "🔧 Starting Windows setup..." -ForegroundColor Cyan
 
 # Ensure winget is available
 if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
-    Write-Error "❌ winget not found. Please install 'App Installer' from Microsoft Store manually."
+    Write-Error "winget not found. Please install 'App Installer' from Microsoft Store manually."
     exit 1
 }
 
@@ -16,7 +16,7 @@ function Install-Package {
         [string]$Id,
         [string]$ExtraArgs = ""
     )
-    Write-Host "📦 Installing $Id..." -ForegroundColor Yellow
+    Write-Host "Installing $Id..." -ForegroundColor Yellow
     winget install --id $Id -e --silent --accept-package-agreements --accept-source-agreements $ExtraArgs
 }
 
@@ -101,7 +101,7 @@ Install-Package dev47apps.DroidCam
 Install-Package twpayne.chezmoi
 
 # Init chezmoi
-Write-Host "📂 Initializing chezmoi..." -ForegroundColor Cyan
+Write-Host "Initializing chezmoi..." -ForegroundColor Cyan
 chezmoi init --apply HYP3R00T
 
-Write-Host "✅ Setup complete. You may want to restart your terminal." -ForegroundColor Green
+Write-Host "Setup complete. You may want to restart your terminal." -ForegroundColor Green
