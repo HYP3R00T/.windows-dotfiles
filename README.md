@@ -1,5 +1,5 @@
 # Windows Dotfiles
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/HYP3R00T/.windows-dotfiles/main/install.ps1 | powershell -NoProfile -
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/HYP3R00T/.windows-dotfiles/main/install.ps1" -OutFile "install.ps1"; powershell -ExecutionPolicy Bypass -File "install.ps1"
 ```
