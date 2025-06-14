@@ -2,7 +2,7 @@
 # Usage (run in a fresh terminal):
 # curl -sSL https://raw.githubusercontent.com/<your-username>/<repo-name>/main/install.ps1 | powershell -NoProfile -
 
-Write-Host "🔧 Starting Windows setup..."
+
 
 # Ensure winget is available
 if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
@@ -101,7 +101,4 @@ Install-Package dev47apps.DroidCam
 Install-Package twpayne.chezmoi
 
 # Init chezmoi
-Write-Host "Initializing chezmoi..."
-chezmoi init --apply HYP3R00T
-
-Write-Host "Setup complete. You may want to restart your terminal."
+chezmoi init --apply https://github.com/HYP3R00T/.windows-dotfiles
