@@ -19,14 +19,8 @@ function Fix-OneDriveRedirects {
             }
 
             try {
-                Get-ChildItem -Path $src -Force | ForEach-Object {
-                    $target = Join-Path $dest $_.Name
-                    if (-not (Test-Path $target)) {
-                        Move-Item -Path $_.FullName -Destination $target -Force
-                    } else {
-                        Write-Warning " - Skipping existing: $target"
-                    }
-                }
+                # Recursively move entire directory contents while preserving structure
+                Move-Item -Path (Join-Path $src '*') -Destination $dest -Force -ErrorAction Stop
             } catch {
                 Write-Warning " - Could not move some items: $_"
             }
