@@ -9,9 +9,22 @@ function Install-Package {
         exit 1
     }
 
-    Write-Host "Installing $Id..."
-    winget install --id $Id -e --silent --accept-package-agreements --accept-source-agreements $ExtraArgs
+    $installed = winget list --id $Id --exact | Select-String "^$Id\s"
+
+    if (-not $installed) {
+        Write-Host "Installing $Id..."
+        winget install --id $Id -e --silent --accept-package-agreements --accept-source-agreements $ExtraArgs
+    } else {
+        $updatable = winget upgrade --id $Id --exact | Select-String "^$Id\s"
+        if ($updatable) {
+            Write-Host "Updating $Id..."
+            winget upgrade --id $Id -e --silent --accept-package-agreements --accept-source-agreements $ExtraArgs
+        } else {
+            Write-Host "$Id is already up to date."
+        }
+    }
 }
+
 
 function Install-CoreTools {
     # Core Dev Tools
