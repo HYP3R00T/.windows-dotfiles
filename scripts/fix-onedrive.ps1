@@ -19,15 +19,23 @@ function Fix-OneDriveRedirects {
             }
 
             try {
-                Get-ChildItem -Path $src -Force -Recurse | Move-Item -Destination $dest -Force
+                Get-ChildItem -Path $src -Force | ForEach-Object {
+                    $target = Join-Path $dest $_.Name
+                    if (-not (Test-Path $target)) {
+                        Move-Item -Path $_.FullName -Destination $target -Force
+                    } else {
+                        Write-Warning " - Skipping existing: $target"
+                    }
+                }
             } catch {
-                Write-Warning " - Could not move: $_"
+                Write-Warning " - Could not move some items: $_"
             }
 
             Set-ItemProperty -Path $regPath -Name $name -Value $newVal
         }
     }
 
+    # Restart Explorer to apply changes
     Stop-Process -Name explorer -Force
     Start-Process explorer
 }
