@@ -1,7 +1,5 @@
-# install.ps1
 # Usage (run in a fresh terminal):
-# curl -sSL https://raw.githubusercontent.com/<your-username>/<repo-name>/main/install.ps1 | powershell -NoProfile -
-
+# Invoke-WebRequest -Uri "https://raw.githubusercontent.com/HYP3R00T/.windows-dotfiles/main/install.ps1" -OutFile "install.ps1"; powershell -ExecutionPolicy Bypass -File "install.ps1
 
 
 # Ensure winget is available
@@ -27,7 +25,7 @@ Install-Package Microsoft.WindowsTerminal
 # Install-Package Microsoft.WindowsTerminal.Preview
 Install-Package wez.wezterm
 Install-Package Starship.Starship
-Install-Package Microsoft.VisualStudioCode '--override "/verysilent /suppressmsgboxes /mergetasks=\'!runcode,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath\'"'
+Install-Package Microsoft.VisualStudioCode '--override "/verysilent /suppressmsgboxes /mergetasks=\'!runcode, addcontextmenufiles, addcontextmenufolders, associatewithfiles, addtopath\'"'
 # Install-Package Microsoft.VisualStudioCode.Insiders
 Install-Package Git.Git
 Install-Package GitHub.GitHubDesktop
@@ -39,6 +37,7 @@ Install-Package Hashicorp.Terraform
 Install-Package Docker.DockerDesktop
 Install-Package Kubernetes.kubectl
 Install-Package Derailed.k9s
+Install-Package RedHat.Podman
 # Install-Package SUSE.RancherDesktop
 # Install-Package LoftLabs.DevPod
 # Install-Package Oracle.VirtualBox
