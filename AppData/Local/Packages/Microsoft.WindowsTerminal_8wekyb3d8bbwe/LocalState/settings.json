@@ -1,11 +1,9 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
-            "command": 
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -16,12 +14,11 @@
             "id": "User.paste"
         },
         {
-            "command": "toggleFocusMode",
-            "id": "User.toggleFocusMode"
+            "command": "find",
+            "id": "User.find"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -29,31 +26,30 @@
             "id": "User.splitPane.A6751878"
         },
         {
-            "command": "find",
-            "id": "User.find"
+            "command": "toggleFocusMode",
+            "id": "User.toggleFocusMode"
         }
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "initialPosition": "-1920,",
-    "keybindings": 
-    [
-        {
-            "id": "User.toggleFocusMode",
-            "keys": "ctrl+alt+f"
-        },
+    "keybindings": [
         {
             "id": "User.copy.644BA8F2",
             "keys": "ctrl+c"
         },
         {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.toggleFocusMode",
+            "keys": "ctrl+alt+f"
         },
         {
             "id": "User.paste",
             "keys": "ctrl+v"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
         },
         {
             "id": "User.splitPane.A6751878",
@@ -61,30 +57,25 @@
         }
     ],
     "launchMode": "maximizedFocus",
-    "newTabMenu": 
-    [
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "bellStyle": "none",
             "colorScheme": "Catppuccin Mocha",
             "cursorColor": "#B4BEFE",
             "cursorShape": "filledBox",
-            "font": 
-            {
+            "font": {
                 "face": "FiraCode Nerd Font",
                 "size": 13
             },
             "padding": "8",
             "scrollbarState": "hidden"
         },
-        "list": 
-        [
+        "list": [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -105,11 +96,13 @@
             },
             {
                 "colorScheme": "Catppuccin Mocha",
+                "experimental.rightClickContextMenu": true,
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
                 "padding": "8",
-                "source": "Windows.Terminal.PowershellCore"
+                "source": "Windows.Terminal.PowershellCore",
+                "startingDirectory": "D:\\"
             },
             {
                 "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
@@ -161,11 +154,31 @@
                 "hidden": false,
                 "name": "Ubuntu 18.04.5 on Windows",
                 "source": "CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc"
+            },
+            {
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe --distribution-id {aacd2b7d-4a8f-4602-89cd-2acc5cef0e3d} --cd ~",
+                "guid": "{920e3115-1b38-468d-ac17-c0c77c3a6a7a}",
+                "hidden": false,
+                "icon": "C:\\Users\\Rajes\\AppData\\Local\\wsl\\{aacd2b7d-4a8f-4602-89cd-2acc5cef0e3d}\\shortcut.ico",
+                "name": "Ubuntu-24.04",
+                "pathTranslationStyle": "wsl",
+                "suppressApplicationTitle": true
+            },
+            {
+                "guid": "{d2a566e7-db29-5332-90ed-82d7eab3a7af}",
+                "hidden": true,
+                "name": "rancher-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{f33778c6-ddf0-5ffc-9d94-31ec82a51c2d}",
+                "hidden": true,
+                "name": "rancher-desktop-data",
+                "source": "Microsoft.WSL"
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
         {
             "background": "#1E1E2E",
             "black": "#1E1E2E",
@@ -214,24 +227,20 @@
         }
     ],
     "theme": "Catppuccin Mocha",
-    "themes": 
-    [
+    "themes": [
         {
             "name": "Catppuccin Mocha",
-            "tab": 
-            {
+            "tab": {
                 "background": "#1E1E2EFF",
                 "iconStyle": "default",
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "tabRow": 
-            {
+            "tabRow": {
                 "background": "#181825FF",
                 "unfocusedBackground": "#11111BFF"
             },
-            "window": 
-            {
+            "window": {
                 "applicationTheme": "dark",
                 "experimental.rainbowFrame": false,
                 "frame": null,
