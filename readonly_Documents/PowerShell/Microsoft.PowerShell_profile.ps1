@@ -20,23 +20,7 @@ Set-PSReadLineOption -Colors @{
 }
 
 # Enable kubectl autocompletion
-# kubectl completion powershell | Out-String | Invoke-Expression
-
-# Enable kubectl autocompletion
-# if (Get-Command kubectl -ErrorAction SilentlyContinue) {
-#     kubectl completion powershell | Out-String | Invoke-Expression
-# }
-
-if (Get-Command kubectl -ErrorAction SilentlyContinue) {
-    # Generate and register kubectl autocompletion
-    $kubectlCompletion = kubectl completion powershell | Out-String
-    Invoke-Expression $kubectlCompletion
-    # Ensure kubectl completion takes precedence
-    Register-ArgumentCompleter -CommandName 'kubectl' -ScriptBlock {
-        param($wordToComplete, $commandAst, $cursorPosition)
-        kubectl completion powershell | Out-String | Invoke-Expression
-    }
-}
+kubectl completion powershell | Out-String | Invoke-Expression
 
 # Add alias
 Set-Alias -Name k -Value kubectl
